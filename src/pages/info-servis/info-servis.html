@@ -1,0 +1,77 @@
+
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Info Servis</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-title>ALAMAT</ion-title>
+    <ion-list>
+  
+        <ion-item>
+          <ion-label floating>NOMBOR UNIT</ion-label>
+          <ion-input type="text" required [(ngModel)]="alNoUnit"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>ALAMAT</ion-label>
+          <ion-input type="text" required [(ngModel)]="alAlamat"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>POSKOD</ion-label>
+          <ion-input type="text" required [(ngModel)]="alPoskod"></ion-input>
+        </ion-item>
+
+<br/>
+<ion-item>
+  <ion-label floating>NEGERI</ion-label>
+ <ion-select required [(ngModel)]="alNegeri">
+      <ion-option value="Perlis">Perlis</ion-option>
+      <ion-option value="Kedah">Kedah</ion-option>
+      <ion-option value="Pulau Pinang">Pulau Pinang</ion-option>
+      <ion-option value="Perak">Perak</ion-option>
+      <ion-option value="Selangor">Selangor</ion-option>
+      <ion-option value="Wilayah Persekutuan">Wilayah Persekutuan</ion-option>
+      <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+      <ion-option value="Melaka">Melaka</ion-option>
+      <ion-option value="Johor">Johor</ion-option>
+      <ion-option value="Pahang">Pahang</ion-option>
+      <ion-option value="Terengganu">Terengganu</ion-option>
+      <ion-option value="Kelantan">Kelantan</ion-option>
+      <ion-option value="Sarawak">Sarawak</ion-option>
+      <ion-option value="Sabah">Sabah</ion-option>
+  </ion-select>
+
+        </ion-item>
+        <br/>
+      <ion-title>INFO PAKAIAN</ion-title>
+      <br/>
+        <ion-item>
+        <ion-label>BERAT PAKAIAN</ion-label>
+            <ion-input type="number" min="0" required [(ngModel)]="inBerat"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-title>WAKTU</ion-title>
+      <br/>
+      <ion-item>
+        <ion-label>TARIKH</ion-label>
+          <ion-datetime displayFormat="YYYY-MMMM-DD" [(ngModel)]="inTarikh"></ion-datetime>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-label>MASA</ion-label>
+          <ion-datetime displayFormat="HH:mm" [(ngModel)]="inMasa"></ion-datetime>
+      </ion-item>
+      <br/>
+      <button  ion-button large (click)="addJob(alNoUnit,alAlamat,alPoskod,alNegeri,inBerat,inTarikh,inMasa,servisNama,servisHarga,servisGambar,userName,userPhone)">
+        Hantar
+      </button>
+
+      </ion-list>
+  </ion-content>
+  

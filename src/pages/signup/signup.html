@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Create an Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="signup">
+  <div class="profile-picture big-profile-picture">
+    <img src="https://firebasestorage.googleapis.com/v0/b/mommyhelper-8496c.appspot.com/o/images%2Fmaid1.png?alt=media&token=6ce35c44-40af-4033-ae5c-64295b52d018">
+  </div>
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+    <ion-item>
+      <ion-label stacked>Nama</ion-label>
+      <ion-input formControlName="nama" type="text" placeholder="Nama"
+        [class.invalid]="!signupForm.controls.nama.valid && signupForm.controls.nama.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.nama.valid  && signupForm.controls.nama.dirty">
+      <p>Sila masukkan nama anda.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Email"
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Sila masukkan email yang sah.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Kata Laluan</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Kata Laluan"
+        [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Kata laluan mesti melebihi 6 karakter.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>No. Kad Pengenalan</ion-label>
+      <ion-input formControlName="identityC" type="text" placeholder="No. Kad Pengenalan"
+        [class.invalid]="!signupForm.controls.identityC.valid && signupForm.controls.identityC.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.identityC.valid  && signupForm.controls.identityC.dirty">
+      <p>Sila masukkan IC anda.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nombor Talian</ion-label>
+      <ion-input formControlName="phoneNo" type="number" placeholder="Nombor Talian"
+        [class.invalid]="!signupForm.controls.phoneNo.valid && signupForm.controls.phoneNo.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.phoneNo.valid  && signupForm.controls.phoneNo.dirty">
+      <p>Sila masukkan nombor talian anda.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nombor Unit</ion-label>
+      <ion-input formControlName="noUnit" type="text" placeholder="Nombor Unit"
+        [class.invalid]="!signupForm.controls.noUnit.valid && signupForm.controls.noUnit.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.noUnit.valid  && signupForm.controls.noUnit.dirty">
+      <p>Sila masukkan nombor unit rumah anda.</p>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Alamat</ion-label>
+      <ion-input formControlName="alamat" type="text" placeholder="Alamat"
+        [class.invalid]="!signupForm.controls.alamat.valid && signupForm.controls.alamat.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.alamat.valid  && signupForm.controls.alamat.dirty">
+      <p>Sila masukkan alamat rumah anda.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Poskod</ion-label>
+      <ion-input formControlName="poskod" type="text" placeholder="Poskod"
+        [class.invalid]="!signupForm.controls.poskod.valid && signupForm.controls.poskod.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.poskod.valid  && signupForm.controls.poskod.dirty">
+      <p>Sila masukkan poskod rumah anda.</p>
+    </ion-item>
+
+    <br/>
+    <ion-item>
+      <ion-label stacked>Negeri</ion-label>
+      <!--<ion-input formControlName="negeri" type="text" placeholder="Negeri"
+        [class.invalid]="!signupForm.controls.negeri.valid && signupForm.controls.negeri.dirty"></ion-input>-->
+       <ion-select formControlName="negeri" type="text" placeholder="Negeri"
+      [class.invalid]="!signupForm.controls.negeri.valid && signupForm.controls.negeri.dirty" >
+          <ion-option value="Perlis">Perlis</ion-option>
+          <ion-option value="Kedah">Kedah</ion-option>
+          <ion-option value="Pulau Pinang">Pulau Pinang</ion-option>
+          <ion-option value="Perak">Perak</ion-option>
+          <ion-option value="Selangor">Selangor</ion-option>
+          <ion-option value="Wilayah Persekutuan">Wilayah Persekutuan</ion-option>
+          <ion-option value="Negeri Sembilan">Negeri Sembilan</ion-option>
+          <ion-option value="Melaka">Melaka</ion-option>
+          <ion-option value="Johor">Johor</ion-option>
+          <ion-option value="Pahang">Pahang</ion-option>
+          <ion-option value="Terengganu">Terengganu</ion-option>
+          <ion-option value="Kelantan">Kelantan</ion-option>
+          <ion-option value="Sarawak">Sarawak</ion-option>
+          <ion-option value="Sabah">Sabah</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.negeri.valid  && signupForm.controls.negeri.dirty">
+      <p>Sila pilih negeri anda.</p>
+    </ion-item>
+    <br/>
+    <button ion-button block type="submit">
+      Create an Account
+    </button>
+
+  </form>
+
+</ion-content>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "695211966649",
+    "firebase_url": "https://mommyhelper-8496c.firebaseio.com",
+    "project_id": "mommyhelper-8496c",
+    "storage_bucket": "mommyhelper-8496c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695211966649:android:d00c942c76f5447c",
+        "android_client_info": {
+          "package_name": "com.busybeno.my"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695211966649-gfnqpd4ji7l7fjrqpr77p9887kka41b5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.busybeno.my",
+            "certificate_hash": "200395f70271453dd69046f635c87e4e2467bede"
+          }
+        },
+        {
+          "client_id": "695211966649-7vhd6ljnpueht0rl18qfml3sks9c9j2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWVTNHYR1nampu8GJhBjXms8dVWdMz8Es"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695211966649-7vhd6ljnpueht0rl18qfml3sks9c9j2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

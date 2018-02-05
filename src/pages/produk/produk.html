@@ -1,0 +1,27 @@
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>Produk</ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="logMeOut()">
+      <ion-icon name="log-out"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="openWebpage()">
+        <ion-thumbnail item-left>
+          <img src="{{ item.gambarProduk }}">
+        </ion-thumbnail>
+          <h2>{{ item.namaProduk }} </h2> 
+            <p style="white-space:normal;">{{ item.descProduk }}</p>
+            <p style="white-space:normal;">RM{{ item.hargaProduk }}</p>
+      </button>
+    </ion-list>
+  </ion-content>
+  

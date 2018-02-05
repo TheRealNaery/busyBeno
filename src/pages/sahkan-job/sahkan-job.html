@@ -1,0 +1,33 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Pengesahan Kerja</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <div class="list card">
+          <ion-list-header>
+              Info Job
+              </ion-list-header>
+        <ion-item class="profile-item">
+          <div class="profile-picture big-profile-picture">
+            <img src="{{jobGambar}}">
+          </div>
+          <h2 class="profile-name dark">{{ jobServis }}</h2>
+          <div class="profile-info">Tarikh: {{ jobTarikh }}</div>
+          <div class="profile-info">Masa: {{ jobMasa }}</div>
+          <div class="profile-info">{{ jobOwner }}</div>
+          <div class="profile-info">Phone: {{ jobOwnerPhone }}</div>
+          <div class="profile-info">{{ jobAlamatPenuh }}</div>
+          <div class="profile-info">{{ jobBeratPakaian }}kg</div>
+          <div class="profile-info">RM{{ jobJumlahHarga }}</div>
+          <button  ion-button large (click)="acceptJob(nStatus,nStatusID)">
+              Sah
+            </button>
+        </ion-item>
+      </div>
+  </ion-content>
+  

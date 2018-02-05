@@ -1,0 +1,26 @@
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>Servis</ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="logMeOut()">
+      <ion-icon name="log-out"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="openServis(item.namaServis,item.hargaServis,item.gambarServis)">
+        <ion-thumbnail item-left>
+          <img src="{{ item.gambarServis }}">
+        </ion-thumbnail>
+        <h2>{{ item.namaServis }} </h2> 
+        <p style="white-space:normal;">{{ item.descServis }}</p>
+        <p style="white-space:normal;">RM{{ item.hargaServis }}</p>
+      </button>
+    </ion-list>
+  </ion-content>

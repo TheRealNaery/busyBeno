@@ -1,0 +1,78 @@
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>Profil Pengguna</ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="logMeOut()">
+      <ion-icon name="log-out"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <div class="list card">
+        <ion-list-header>
+            Profil Pengguna
+            </ion-list-header>
+      <ion-item class="profile-item">
+          <a (click)="openUpload()">
+        <div class="profile-picture big-profile-picture">
+          <img *ngIf="userProfile?.gambarProfil" src="{{userProfile?.gambarProfil}}" >
+        </div></a>
+        <h2 class="profile-name dark"*ngIf="userProfile?.nama">{{userProfile?.nama}}</h2>
+        <div class="profile-info" *ngIf="userProfile?.email">{{userProfile?.email}}</div>
+        <div class="profile-info" *ngIf="userProfile?.identityC">IC: {{userProfile?.identityC}}</div>
+        <div class="profile-info" *ngIf="userProfile?.phoneNo">Phone: {{userProfile?.phoneNo}}</div>
+        <div class="profile-info" *ngIf="userProfile?.alamatPenuh">{{userProfile?.alamatPenuh}}</div>
+      </ion-item>
+      <ion-list-header>
+          Kerja Belum Diterima
+      </ion-list-header>
+      <ion-list>
+          <button ion-item *ngFor="let job of senaraiKerja" (click)="openJob(job.jobGambar,job.jobServis,job.jobNegeri,job.jobAlamatPenuh,job.jobBeratPakaian,job.jobJumlahHarga,job.jobID,job.jobOwner,job.jobOwnerPhone,job.jobTarikh,job.jobMasa)"
+          [class.hide]="job.jobStatus == 'Sudah Diterima' || job.jobStatus == 'Sahkan Selesai' || job.jobStatus == 'Selesai'">
+            <ion-thumbnail item-left>
+              <img src="{{ job.jobGambar }}">
+            </ion-thumbnail>
+              <h2>{{ job.jobServis }}</h2> 
+                <p style="white-space:normal;">{{ job.jobAlamatPenuh }}</p>
+                <p style="white-space:normal;">{{ job.jobBeratPakaian }}kg</p>
+                <p>ID {{job.jobID}}</p>
+          </button>
+        </ion-list>
+        <ion-list-header>
+            Kerja Sudah Diterima
+        </ion-list-header>
+        <ion-list>
+            <button ion-item *ngFor="let job of senaraiKerja" (click)="openJob(job.jobGambar,job.jobServis,job.jobNegeri,job.jobAlamatPenuh,job.jobBeratPakaian,job.jobJumlahHarga,job.jobID,job.jobOwner,job.jobOwnerPhone,job.jobTarikh,job.jobMasa)"
+            [class.hide]="job.jobStatus == 'Belum Diterima' || job.jobStatus == 'Sahkan Selesai' || job.jobStatus == 'Selesai'">
+              <ion-thumbnail item-left>
+                <img src="{{ job.jobGambar }}">
+              </ion-thumbnail>
+                <h2>{{ job.jobServis }}</h2> 
+                  <p style="white-space:normal;">{{ job.jobAlamatPenuh }}</p>
+                  <p style="white-space:normal;">{{ job.jobBeratPakaian }}kg</p>
+                  <p>ID {{job.jobID}}</p>
+            </button>
+          </ion-list>
+          <ion-list-header>
+              Kerja Sudah Selesai
+          </ion-list-header>
+          <ion-list>
+              <button ion-item *ngFor="let job of senaraiKerja" (click)="openJobSah(job.jobGambar,job.jobServis,job.jobNegeri,job.jobAlamatPenuh,job.jobBeratPakaian,job.jobJumlahHarga,job.jobID,job.jobOwner,job.jobOwnerPhone,job.jobTarikh,job.jobMasa)"
+              [class.hide]="job.jobStatus == 'Belum Diterima' || job.jobStatus == 'Sudah Diterima' || job.jobStatus == 'Selesai'">
+                <ion-thumbnail item-left>
+                  <img src="{{ job.jobGambar }}">
+                </ion-thumbnail>
+                  <h2>{{ job.jobServis }}</h2> 
+                    <p style="white-space:normal;">{{ job.jobAlamatPenuh }}</p>
+                    <p style="white-space:normal;">{{ job.jobBeratPakaian }}kg</p>
+                    <p>ID {{job.jobID}}</p>
+              </button>
+            </ion-list>
+    </div>
+  </ion-content>
+  
